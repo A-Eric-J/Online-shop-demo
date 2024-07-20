@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pixelfield_test_app/const_values/route_paths.dart';
-import 'package:pixelfield_test_app/ui/screens/login_screen.dart';
+import 'package:pixelfield_test_app/ui/screens/sign_in_screen.dart';
 import 'package:pixelfield_test_app/ui/screens/main_view.dart';
 import 'package:pixelfield_test_app/ui/screens/welcome_screen.dart';
 
@@ -10,8 +10,8 @@ class Router {
     switch (settings.name) {
       case welcomePath:
         return MaterialPageRoute(builder: (_) => const WelcomeScreen());
-      case loginPath:
-        return MaterialPageRoute(builder: (_) => const LoginScreen());
+      case signInPath:
+        return MaterialPageRoute(builder: (_) => const SignInScreen());
       case mainViewPath:
         return MaterialPageRoute(builder: (_) => const MainView());
 

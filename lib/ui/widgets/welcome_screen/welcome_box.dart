@@ -71,7 +71,7 @@ class WelcomeBox extends StatelessWidget {
             height: 24,
           ),
            Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Text(
                 'Have an account?',
@@ -81,12 +81,12 @@ class WelcomeBox extends StatelessWidget {
                     color: whiteTextColor_2,
                     fontWeight: FontWeight.w400),
               ),
+              const SizedBox(width: 24,),
               InkWell(
                 splashColor: transparent,
                 highlightColor: transparent,
                 onTap: ()=> locator<NavigationService>().navigateTo(
-                  loginPath,
-                  pushReplacement: true,
+                  signInPath,
                 ),
                 child: const Text(
                   'Sign in first',
