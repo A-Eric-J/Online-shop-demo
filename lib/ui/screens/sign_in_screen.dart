@@ -22,7 +22,7 @@ class _SignInScreenState extends State<SignInScreen> {
     final node = FocusScope.of(context);
     var width = MediaQuery.of(context).size.width;
     return Scaffold(
-      backgroundColor: signInBackgroundColor,
+      backgroundColor: screensBackgroundColor,
       body: SafeArea(
         /// Maybe the user's phone is too small and
         /// we may have overflow in this page so SingleChildScrollView added.
@@ -174,7 +174,7 @@ class _SignInScreenState extends State<SignInScreen> {
                       style: TextStyle(
                           fontFamily: 'EBGaramond',
                           fontSize: 16,
-                          color: darkTextColor,
+                          color: darkColor,
                           fontWeight: FontWeight.w600),
                     )),
                 const SizedBox(

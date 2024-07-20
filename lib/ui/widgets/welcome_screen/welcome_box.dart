@@ -64,7 +64,7 @@ class WelcomeBox extends StatelessWidget {
                 style: TextStyle(
                     fontFamily: 'EBGaramond',
                     fontSize: 16,
-                    color: darkTextColor,
+                    color: darkColor,
                     fontWeight: FontWeight.w600),
               )),
           const SizedBox(
