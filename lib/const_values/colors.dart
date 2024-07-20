@@ -5,10 +5,11 @@ import 'package:flutter/material.dart';
 const transparent = Colors.transparent;
 
 const brandMainColor = Color.fromRGBO(11, 21, 25, 1);
-const welcomeBoxBackgroundColor = Color.fromRGBO(18, 35, 41, 1);
+const cardBackgroundColor = Color.fromRGBO(18, 35, 41, 1);
 const screensBackgroundColor = Color.fromRGBO(14, 28, 33, 1);
 const whiteTextColor_1 = Color.fromRGBO(231, 233, 234, 1);
 const whiteTextColor_2 = Color.fromRGBO(184, 189, 191, 1);
+const whiteTextColor_3 = Color.fromRGBO(215, 213, 209, 1);
 const darkColor = Color.fromRGBO(11, 21, 25, 1);
 const orangeColor_1 = Color.fromRGBO(212, 154, 0, 1);
 const orangeColor_2 = Color.fromRGBO(255, 185, 1, 1);

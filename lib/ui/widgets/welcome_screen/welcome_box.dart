@@ -11,7 +11,7 @@ class WelcomeBox extends StatelessWidget {
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
     return Container(
-      color: welcomeBoxBackgroundColor,
+      color: cardBackgroundColor,
       margin: const EdgeInsets.only(bottom: 32, right: 16, left: 24),
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 24),
       child: Column(

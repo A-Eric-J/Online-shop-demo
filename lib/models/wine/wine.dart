@@ -10,13 +10,13 @@ class Wine extends Equatable {
   @HiveField(1)
   final String name;
   @HiveField(2)
-  final double code;
+  final String code;
   @HiveField(3)
   final String description;
   @HiveField(4)
   final String imageUrl;
 
-  Wine({
+  const Wine({
     required this.id,
     required this.name,
     required this.code,

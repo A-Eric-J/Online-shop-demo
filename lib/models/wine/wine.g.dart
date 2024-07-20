@@ -19,7 +19,7 @@ class WineAdapter extends TypeAdapter<Wine> {
     return Wine(
       id: fields[0] as String,
       name: fields[1] as String,
-      code: fields[2] as double,
+      code: fields[2] as String,
       description: fields[3] as String,
       imageUrl: fields[4] as String,
     );
