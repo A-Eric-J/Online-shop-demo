@@ -27,7 +27,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
       //TODO checking that we are loggedIn to visit MainView or visit loginScreen
       locator<NavigationService>().navigateTo(
-        loginPath,
+        welcomePath,
         pushReplacement: true,
       );
     });
@@ -46,14 +46,14 @@ class _SplashScreenState extends State<SplashScreen> {
         body: SafeArea(
           bottom: false,
           child: Stack(
-            alignment: AlignmentDirectional.bottomCenter,
+            alignment: AlignmentDirectional.center,
             children: [
               SizedBox(
                 width: width,
                 height: height,
                 child: Image.asset(background,fit: BoxFit.cover,),
               ),
-              Center(child: Image.asset(logo))
+              Image.asset(logo)
             ],
           ),
         ));

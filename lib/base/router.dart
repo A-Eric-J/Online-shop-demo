@@ -2,11 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:pixelfield_test_app/const_values/route_paths.dart';
 import 'package:pixelfield_test_app/ui/screens/login_screen.dart';
 import 'package:pixelfield_test_app/ui/screens/main_view.dart';
+import 'package:pixelfield_test_app/ui/screens/welcome_screen.dart';
 
 /// All the Routes for navigating are placed here
 class Router {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
+      case welcomePath:
+        return MaterialPageRoute(builder: (_) => const WelcomeScreen());
       case loginPath:
         return MaterialPageRoute(builder: (_) => const LoginScreen());
       case mainViewPath:
