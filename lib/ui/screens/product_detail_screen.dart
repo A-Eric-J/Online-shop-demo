@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:pixelfield_test_app/const_values/assets.dart';
 import 'package:pixelfield_test_app/const_values/colors.dart';
 import 'package:pixelfield_test_app/locator.dart';
 import 'package:pixelfield_test_app/models/wine/wine.dart';
 import 'package:pixelfield_test_app/services/navigation_service.dart';
 import 'package:pixelfield_test_app/ui/widgets/product_detail_screen/details_tab.dart';
+import 'package:pixelfield_test_app/ui/widgets/product_detail_screen/history_tab.dart';
 import 'package:pixelfield_test_app/ui/widgets/product_detail_screen/tab_bar_widget.dart';
 import 'package:pixelfield_test_app/ui/widgets/product_detail_screen/tasting_notes_tab.dart';
 
@@ -92,7 +92,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                           children: [
                             Row(
                               children: [
-                                SvgPicture.asset(
+                                Image.asset(
                                   tag,
                                   fit: BoxFit.contain,
                                 ),
@@ -201,35 +201,51 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                         ),
                       ),
                     ),
-                    Container(
-                      margin: const EdgeInsets.only(top: 32, bottom: 16),
-                      padding:
-                          const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
-                      decoration: BoxDecoration(
-                        color: orangeColor_1,
-                        borderRadius: BorderRadius.circular(
-                          8.0,
+                    InkWell(
+                      splashColor: transparent,
+                      highlightColor: transparent,
+                      onTap: ()=>ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                        duration: Duration(milliseconds: 1500),
+                        content: Text(
+                          'Added to my collection!',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                              fontFamily: 'EBGaramond',
+                              fontSize: 16,
+                              color: whiteTextColor_1,
+                              fontWeight: FontWeight.w600),
                         ),
-                      ),
-                      child: const Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Icon(
-                            Icons.add,
-                            color: brandMainColor,
+                      )),
+                      child: Container(
+                        margin: const EdgeInsets.only(top: 32, bottom: 16),
+                        padding:
+                            const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+                        decoration: BoxDecoration(
+                          color: orangeColor_1,
+                          borderRadius: BorderRadius.circular(
+                            8.0,
                           ),
-                          SizedBox(
-                            width: 8,
-                          ),
-                          Text(
-                            'Add to my collection',
-                            style: TextStyle(
-                                fontFamily: 'EBGaramond',
-                                fontSize: 16,
-                                color: brandMainColor,
-                                fontWeight: FontWeight.w600),
-                          ),
-                        ],
+                        ),
+                        child: const Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Icon(
+                              Icons.add,
+                              color: brandMainColor,
+                            ),
+                            SizedBox(
+                              width: 8,
+                            ),
+                            Text(
+                              'Add to my collection',
+                              style: TextStyle(
+                                  fontFamily: 'EBGaramond',
+                                  fontSize: 16,
+                                  color: brandMainColor,
+                                  fontWeight: FontWeight.w600),
+                            ),
+                          ],
+                        ),
                       ),
                     )
                   ],
@@ -249,8 +265,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
       case TabBarEnum.tastingNotes:
         return TastingNotesTab();
       case TabBarEnum.history:
-        return const Center(
-            child: Text('History', style: TextStyle(color: Colors.white)));
+        return HistoryTab();
       default:
         return DetailsTab();
     }

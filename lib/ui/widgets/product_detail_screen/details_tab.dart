@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:pixelfield_test_app/const_values/colors.dart';
 
 class DetailsTab extends StatelessWidget {
-  final List<Map<String, String>> details = [
+  final  details = [
     {'title': 'Distillery', 'value': 'Text'},
     {'title': 'Region', 'value': 'Text'},
     {'title': 'Country', 'value': 'Text'},

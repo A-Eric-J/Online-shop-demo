@@ -172,8 +172,34 @@ class TastingNotesTab extends StatelessWidget {
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: tastingNoteBody(width),
+      children: [
+        InkWell(
+          splashColor: transparent,
+          highlightColor: transparent,
+          onTap: ()=>ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+            duration: Duration(milliseconds: 1500),
+            content: Text(
+              'Video Not Available!',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                  fontFamily: 'EBGaramond',
+                  fontSize: 16,
+                  color: whiteTextColor_1,
+                  fontWeight: FontWeight.w600),
+            ),
+          )),
+          child: Container(
+            color: brandMainColor,
+            height: 233,width: width,
+            child: const Icon(Icons.play_arrow,color: white,size: 28,),
+          ),
+        ),
+        const SizedBox(height: 16,),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: tastingNoteBody(width),
+        ),
+      ],
     );
   }
 }

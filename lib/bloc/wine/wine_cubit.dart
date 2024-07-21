@@ -12,6 +12,7 @@ class WineCubit extends Cubit<WineState> {
     emit(WineLoading());
     try {
       var result =  await Connectivity().checkConnectivity();
+      print('result: $result');
       if (result.first != ConnectivityResult.none) {
         final wines = await wineRepository.fetchWines();
         await wineRepository.saveWines(wines);

@@ -72,7 +72,8 @@ class _CollectionScreenState extends State<CollectionScreen> {
                       color: white,
                     ));
                   } else if (state is WineLoaded) {
-                    return GridView.builder(
+                    if(state.wines.isNotEmpty) {
+                      return GridView.builder(
                       gridDelegate:
                           const SliverGridDelegateWithFixedCrossAxisCount(
                         crossAxisCount: 2,
@@ -86,8 +87,19 @@ class _CollectionScreenState extends State<CollectionScreen> {
                         return WineGridItem(wine: wine);
                       },
                     );
+                    }
+                    else{
+                      return const Center(
+                          child: Text(
+                            'List is Empty or Device is not connected to internet!',
+                            style: TextStyle(
+                                fontFamily: 'EBGaramond',
+                                fontSize: 16,
+                                color: whiteTextColor_1,
+                                fontWeight: FontWeight.w600),
+                          ));
+                    }
                   } else if (state is WineError) {
-                    print('error: ${state.message}');
                     return Center(
                         child: Text(
                       state.message,
