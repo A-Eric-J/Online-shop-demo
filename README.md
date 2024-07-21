@@ -1,16 +1,26 @@
-# pixelfield_test_app
+# Online Shop Demo
 
-A new Flutter project.
+A Flutter Demo app for browsing and purchasing wines. It uses BLoC for state management and Hive for local data storage.
+This app Uses mockup JSON files instead of REST API. This connection will be available only when internet connection is available.
+When the app is not connected to internet it uses the stored data.
+## Features
 
-## Getting Started
+- Display a grid view of wines with images, names, descriptions and etc.
+- BLoC for state management
+- Persistent user login state using Hive.
+- Bottom navigation with multiple screens (Scan, Collection, Shop, Setting).
+- Fetch data from mock JSON files.
 
-This project is a starting point for a Flutter application.
+## Screenshots
 
-A few resources to get you started if this is your first Flutter project:
+![Wine List](screenshots/wine_list.png)
+![Wine Details](screenshots/wine_details.png)
+![History](screenshots/history.png)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+
+Hope you enjoy it...
+
+
+
