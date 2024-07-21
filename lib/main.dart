@@ -8,7 +8,6 @@ import 'package:pixelfield_test_app/locator.dart';
 import 'package:pixelfield_test_app/models/wine/wine.dart';
 import 'package:pixelfield_test_app/repository/repository.dart';
 import 'package:pixelfield_test_app/services/navigation_service.dart';
-import 'package:pixelfield_test_app/ui/screens/main_view.dart';
 import 'package:pixelfield_test_app/ui/screens/splash_screen.dart';
 import 'package:pixelfield_test_app/base/router.dart' as router;
 
@@ -18,6 +17,7 @@ void main() async{
   setupLocator();
   await Hive.initFlutter();
   Hive.registerAdapter(WineAdapter());
+  await Hive.openBox('loginBox');
   runApp(const MyApp());
 }
 
@@ -40,7 +40,7 @@ class MyApp extends StatelessWidget {
           onGenerateRoute: router.Router.generateRoute,
           debugShowCheckedModeBanner: true,
           navigatorKey: locator<NavigationService>().navigatorKey,
-          home: const MainView(),
+          home: const SplashScreen(),
       ),
     );
   }

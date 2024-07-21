@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:pixelfield_test_app/const_values/colors.dart';
 import 'package:pixelfield_test_app/const_values/route_paths.dart';
 import 'package:pixelfield_test_app/locator.dart';
+import 'package:pixelfield_test_app/services/auth_service.dart';
 import 'package:pixelfield_test_app/services/navigation_service.dart';
 
 class SignInScreen extends StatefulWidget {
@@ -15,6 +16,8 @@ class _SignInScreenState extends State<SignInScreen> {
   var obscurePassword = true;
   var isEmailNotEmpty = false;
   var isPasswordNotEmpty = false;
+  final AuthService _authService = AuthService();
+
 
 
   @override
@@ -159,8 +162,10 @@ class _SignInScreenState extends State<SignInScreen> {
                   height: 40,
                 ),
                 ElevatedButton(
-                    onPressed:  isEmailNotEmpty && isPasswordNotEmpty ? () => locator<NavigationService>()
-                        .navigateTo(mainViewPath, pushReplacement: true) : null,
+                    onPressed:  isEmailNotEmpty && isPasswordNotEmpty ? () async{
+                      await _authService.setLoginState(true);
+                      locator<NavigationService>()
+                        .navigateTo(mainViewPath, pushReplacement: true); }: null,
                     style: ElevatedButton.styleFrom(
                       backgroundColor: orangeColor_1,
                       disabledBackgroundColor: grey,
