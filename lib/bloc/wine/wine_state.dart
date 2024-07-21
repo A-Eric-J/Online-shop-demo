@@ -13,7 +13,7 @@ class WineInitial extends WineState {}
 class WineLoading extends WineState {}
 
 class WineLoaded extends WineState {
-  final List<Wine> wines;
+  final List<Wine?> wines;
 
   const WineLoaded(this.wines);
 

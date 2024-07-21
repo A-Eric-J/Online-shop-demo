@@ -6,15 +6,15 @@ part 'wine.g.dart';
 @HiveType(typeId: 0)
 class Wine extends Equatable {
   @HiveField(0)
-  final String id;
+  final String? id;
   @HiveField(1)
-  final String name;
+  final String? name;
   @HiveField(2)
-  final String code;
+  final String? code;
   @HiveField(3)
-  final String description;
+  final String? description;
   @HiveField(4)
-  final String imageUrl;
+  final String? imageUrl;
 
   const Wine({
     required this.id,
@@ -45,5 +45,5 @@ class Wine extends Equatable {
   }
 
   @override
-  List<Object> get props => [id, name, code ,description, imageUrl];
+  List<Object> get props => [id!, name!, code! ,description!, imageUrl!];
 }

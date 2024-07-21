@@ -15,3 +15,4 @@ const orangeColor_1 = Color.fromRGBO(212, 154, 0, 1);
 const orangeColor_2 = Color.fromRGBO(255, 185, 1, 1);
 const white = Colors.white;
 const grey = Color(0xFF899194);
+const grey_2 = Color.fromRGBO(137, 145, 148, 1);

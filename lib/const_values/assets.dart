@@ -8,6 +8,8 @@
   const String shop = 'assets/icons/shop.svg';
   const String setting = 'assets/icons/setting.svg';
   const String bell = 'assets/icons/bell.svg';
+  const String tag = 'assets/icons/tag.svg';
+
 
 
 
